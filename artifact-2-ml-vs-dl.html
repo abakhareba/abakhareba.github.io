@@ -1,0 +1,125 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ML or Deep Learning? Decision Guide | Ali Bakhareba</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.flow{overflow-x:auto;margin:10px 0}
+.flow svg{min-width:640px;width:100%;height:auto}
+.cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:10px}
+.case{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px}
+.case h3{margin:0 0 6px;font-size:18px}
+.case .tag{font-size:12px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
+.cmp{width:100%;border-collapse:collapse;font-size:15px;margin-top:8px}
+.cmp th{background:var(--navy);color:#fff;text-align:left;padding:8px}
+.cmp td{border-bottom:1px solid var(--line);padding:8px;vertical-align:top}
+.tablewrap{overflow-x:auto}
+.check li{margin-bottom:6px}
+</style></head><body>
+<header class="site"><div class="wrap"><a href="index.html">Ali Bakhareba</a>
+<nav><a href="index.html#about">About</a><a href="index.html#artifacts">Artifacts</a><a href="index.html#contact">Contact</a></nav></div></header>
+<div class="wrap">
+<div class="art-head">
+ <div class="hero" style="padding:0;border:0"><div class="kicker">Artifact 2 · AIML-500 Machine Learning Fundamentals · Workshop 2</div></div>
+ <div class="toc">On this page:
+ <a href="#title">Title</a><a href="#introduction">Introduction</a><a href="#description">Description</a><a href="#guide">The decision guide</a><a href="#objective">Objective</a><a href="#process">Process</a><a href="#tools">Tools and Technologies Used</a><a href="#value">Value Proposition</a><a href="#unique">Unique Value</a><a href="#relevance">Relevance</a><a href="#references">References</a></div>
+</div>
+
+<div class="field" id="title"><h2>Title</h2>
+<h1 style="margin:0">ML or Deep Learning? A Decision Guide for Insights Teams</h1></div>
+
+<div class="field" id="introduction"><h2>Introduction</h2>
+<p>When a research or analytics team decides to “use AI” on a problem, one of the first real choices is whether a traditional machine learning model is enough or whether the problem needs deep learning. The wrong choice wastes time and money: deep learning on a small survey table adds cost and makes results harder to explain, while traditional models cannot handle raw images, text or speech. This artifact turns my Workshop 2 report on machine learning versus deep learning into a short guide that helps insights teams make that choice.</p></div>
+
+<div class="field" id="description"><h2>Description</h2>
+<p>The guide has three parts: a four-question decision flow, a side-by-side comparison of the two approaches, and two real-world cases from published research. The first case is customer churn prediction with a support vector machine (traditional ML). The second is Google’s neural machine translation system (deep learning). For each case, the guide explains why the chosen approach fits and why the other one does not. The full written report is available as a PDF.</p>
+<p><a class="btn" href="assets/ML-vs-DL-Report-Ali-Bakhareba.pdf" target="_blank" rel="noopener">Open the full report (PDF)</a></p></div>
+
+<div class="field" id="guide"><h2>The decision guide</h2>
+<h3 style="margin-top:6px">Four questions to ask before choosing</h3>
+<div class="flow"><svg viewBox="0 0 760 330" role="img" aria-label="Decision flow: data type, amount of data, need to explain results, computing budget">
+<defs><marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#16324f"/></marker></defs>
+<g font-family="Inter,Arial,sans-serif" font-size="13">
+<rect x="10" y="20" width="250" height="56" rx="10" fill="#f4f6f8" stroke="#16324f"/><text x="135" y="44" text-anchor="middle" font-weight="700" fill="#16324f">1. What does the data look like?</text><text x="135" y="63" text-anchor="middle" fill="#5d6b78" font-size="12">table of named fields vs raw media</text>
+<rect x="10" y="100" width="250" height="56" rx="10" fill="#f4f6f8" stroke="#16324f"/><text x="135" y="124" text-anchor="middle" font-weight="700" fill="#16324f">2. How much labeled data?</text><text x="135" y="143" text-anchor="middle" fill="#5d6b78" font-size="12">thousands vs millions of examples</text>
+<rect x="10" y="180" width="250" height="56" rx="10" fill="#f4f6f8" stroke="#16324f"/><text x="135" y="204" text-anchor="middle" font-weight="700" fill="#16324f">3. Must results be explained?</text><text x="135" y="223" text-anchor="middle" fill="#5d6b78" font-size="12">to clients, managers, regulators</text>
+<rect x="10" y="260" width="250" height="56" rx="10" fill="#f4f6f8" stroke="#16324f"/><text x="135" y="284" text-anchor="middle" font-weight="700" fill="#16324f">4. What computing budget?</text><text x="135" y="303" text-anchor="middle" fill="#5d6b78" font-size="12">laptop / standard server vs GPUs</text>
+<line x1="135" y1="76" x2="135" y2="98" stroke="#16324f" stroke-width="1.5" marker-end="url(#ah)"/><line x1="135" y1="156" x2="135" y2="178" stroke="#16324f" stroke-width="1.5" marker-end="url(#ah)"/><line x1="135" y1="236" x2="135" y2="258" stroke="#16324f" stroke-width="1.5" marker-end="url(#ah)"/>
+<rect x="320" y="20" width="200" height="296" rx="12" fill="#e8f3f1" stroke="#2f6f6a" stroke-width="2"/>
+<text x="420" y="48" text-anchor="middle" font-weight="700" fill="#2f6f6a" font-size="15">Traditional ML</text>
+<text x="420" y="78" text-anchor="middle" fill="#1f2933">Structured table,</text><text x="420" y="96" text-anchor="middle" fill="#1f2933">features you can name</text>
+<text x="420" y="138" text-anchor="middle" fill="#1f2933">Hundreds to thousands</text><text x="420" y="156" text-anchor="middle" fill="#1f2933">of labeled cases</text>
+<text x="420" y="208" text-anchor="middle" fill="#1f2933">Yes: needs clear</text><text x="420" y="226" text-anchor="middle" fill="#1f2933">"why" behind results</text>
+<text x="420" y="285" text-anchor="middle" fill="#1f2933">Standard computing</text>
+<rect x="545" y="20" width="200" height="296" rx="12" fill="#f1ecf7" stroke="#6b4a91" stroke-width="2"/>
+<text x="645" y="48" text-anchor="middle" font-weight="700" fill="#6b4a91" font-size="15">Deep learning</text>
+<text x="645" y="78" text-anchor="middle" fill="#1f2933">Raw images, text,</text><text x="645" y="96" text-anchor="middle" fill="#1f2933">audio or video</text>
+<text x="645" y="138" text-anchor="middle" fill="#1f2933">Very large labeled</text><text x="645" y="156" text-anchor="middle" fill="#1f2933">datasets</text>
+<text x="645" y="208" text-anchor="middle" fill="#1f2933">Accuracy matters more</text><text x="645" y="226" text-anchor="middle" fill="#1f2933">than a simple "why"</text>
+<text x="645" y="285" text-anchor="middle" fill="#1f2933">GPUs available</text>
+<line x1="262" y1="48" x2="318" y2="48" stroke="#16324f" stroke-width="1.2" stroke-dasharray="4 3"/><line x1="262" y1="128" x2="318" y2="128" stroke="#16324f" stroke-width="1.2" stroke-dasharray="4 3"/><line x1="262" y1="208" x2="318" y2="208" stroke="#16324f" stroke-width="1.2" stroke-dasharray="4 3"/><line x1="262" y1="288" x2="318" y2="288" stroke="#16324f" stroke-width="1.2" stroke-dasharray="4 3"/>
+</g></svg></div>
+<p class="vp" style="font-size:15px"><b>Rule of thumb:</b> if most answers fall in the left column, start with traditional ML. Move to deep learning only when the data is raw and plentiful and the extra cost is justified.</p>
+
+<h3>How the two approaches differ</h3>
+<div class="tablewrap"><table class="cmp">
+<tr><th></th><th>Traditional ML</th><th>Deep learning</th></tr>
+<tr><td><b>Who finds the features</b></td><td>People choose them (e.g., contract length, payment history)</td><td>The neural network learns them from raw data</td></tr>
+<tr><td><b>Data needed</b></td><td>Works with smaller datasets</td><td>Needs large datasets</td></tr>
+<tr><td><b>Computing</b></td><td>Modest; fast to train and retrain</td><td>Heavy; usually needs GPUs</td></tr>
+<tr><td><b>Explaining results</b></td><td>Easier: based on named variables</td><td>Harder: many layers and parameters</td></tr>
+<tr><td><b>Typical insights uses</b></td><td>Churn and retention, key-driver analysis, segment scoring</td><td>Reading open-ended text at scale, image and video analysis, translation</td></tr>
+</table></div>
+
+<h3>Two real-world cases</h3>
+<div class="cases">
+ <div class="case"><span class="tag">Traditional ML · support vector machine</span><h3>Predicting customer churn</h3>
+ <p>Coussement and Van den Poel (2008) built SVM churn models for a newspaper subscription service and compared them with logistic regression and random forests. Tuning mattered: the SVMs beat logistic regression only with the better of two parameter-selection methods, and random forests did best overall.</p>
+ <p><b>Why ML fits:</b> structured customer records with meaningful fields, a manageable dataset, and results a retention team has to understand and act on.</p>
+ <p><b>Why not deep learning:</b> it needs far more data, is harder to explain, and has little to discover when the useful information is already in a few known fields.</p></div>
+ <div class="case"><span class="tag">Deep learning · neural translation</span><h3>Translating between languages</h3>
+ <p>Wu et al. (2016) describe Google’s Neural Machine Translation system: a deep LSTM network with eight encoder and eight decoder layers, plus attention. In human evaluations it cut translation errors by about 60% on average compared with Google’s earlier phrase-based system.</p>
+ <p><b>Why deep learning fits:</b> the input is raw language, where meaning depends on word order and context that no team could list by hand.</p>
+ <p><b>Why not traditional ML:</b> hand-made features such as word counts lose word order, and a classifier predicts one label instead of producing a whole sentence.</p></div>
+</div>
+</div>
+
+<div class="field" id="objective"><h2>Objective</h2>
+<p>The Workshop 2 assignment asked me to choose one traditional machine learning example and one deep learning example from the lesson, find a real-world application of each, and explain why each approach suits its problem and why the other does not. For the portfolio, my goal was to turn that analysis into something an insights or analytics team could use before starting a project: a short way to decide which approach a problem needs.</p></div>
+
+<div class="field" id="process"><h2>Process</h2>
+<ol>
+<li><b>Picked two lesson examples</b> that sit at opposite ends: churn prediction, where data is structured, and machine translation, where data is raw language.</li>
+<li><b>Found published real-world applications</b> for each and checked the details against the original sources.</li>
+<li><b>Wrote the report</b> (2.3) explaining why each approach fits and why the other does not.</li>
+<li><b>Adapted it for the portfolio audience:</b> turned the reasoning into a four-question decision flow and a comparison table, and kept the two cases as short evidence panels.</li>
+<li><b>Added typical insights uses</b> so a research team can connect each approach to work it already does.</li>
+<li><b>Reviewed the page</b> against the course artifact template and the 2.5 rubric.</li>
+</ol></div>
+
+<div class="field" id="tools"><h2>Tools and Technologies Used</h2>
+<ul>
+<li>Course lesson materials (AIML-500 Workshop 2): the definitions and examples of ML and DL</li>
+<li>Published research: Coussement and Van den Poel (2008); Wu et al. (2016)</li>
+<li>Microsoft Word: the original APA 7 report</li>
+<li>Claude (Anthropic): help locating and checking sources, drafting the report and this page, and writing the HTML/CSS. I reviewed and edited the content.</li>
+<li>HTML, CSS and SVG: the decision flow and page layout</li>
+<li>GitHub Pages: hosting the portfolio</li>
+</ul></div>
+
+<div class="field" id="value"><h2>Value Proposition</h2>
+<div class="vp">This guide helps insights and analytics teams decide in a few minutes whether a problem needs traditional machine learning or deep learning, so they avoid paying for complexity they do not need and can explain their choice to stakeholders.</div></div>
+
+<div class="field" id="unique"><h2>Unique Value</h2>
+<p>Most explanations of machine learning versus deep learning focus on how the algorithms work. This guide starts from the decision a project team actually faces and frames it in terms that research teams use every day: the kind of data, how many cases there are, and whether the client needs to understand the “why.” Those are the same questions that come up when scoping a market research study, which is where my experience comes from.</p></div>
+
+<div class="field" id="relevance"><h2>Relevance</h2>
+<p>This artifact shows a different skill from my first one. Artifact 1 placed AI developments in context; this one applies technical understanding to a practical choice. It supports my personal value proposition of bringing AI into research carefully: choosing the simplest method that answers the question and being able to explain why. It is relevant now because many teams are under pressure to use advanced AI even when a simpler model would do the job better.</p></div>
+
+<div class="field refs" id="references"><h2>References</h2>
+<p>Coussement, K., &amp; Van den Poel, D. (2008). Churn prediction in subscription services: An application of support vector machines while comparing two parameter-selection techniques. <i>Expert Systems with Applications, 34</i>(1), 313–327. <a href="https://doi.org/10.1016/j.eswa.2006.09.038">https://doi.org/10.1016/j.eswa.2006.09.038</a></p>
+<p>Indiana Wesleyan University. (n.d.). <i>2.3 Assignment: Machine learning vs. deep learning</i> [Course lesson]. AIML-500 Machine Learning Fundamentals, Brightspace.</p>
+<p>Wu, Y., Schuster, M., Chen, Z., Le, Q. V., Norouzi, M., Macherey, W., Krikun, M., Cao, Y., Gao, Q., Macherey, K., Klingner, J., Shah, A., Johnson, M., Liu, X., Kaiser, Ł., Gouws, S., Kato, Y., Kudo, T., Kazawa, H., . . . Dean, J. (2016). <i>Google’s neural machine translation system: Bridging the gap between human and machine translation</i> (arXiv:1609.08144). arXiv. <a href="https://doi.org/10.48550/arXiv.1609.08144">https://doi.org/10.48550/arXiv.1609.08144</a></p>
+</div>
+
+<footer>© 2026 Ali Bakhareba · Coursework artifact, M.S. in Artificial Intelligence – Data Analytics, Indiana Wesleyan University. <a href="index.html">Back to portfolio home</a></footer>
+</div></body></html>
