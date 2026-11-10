@@ -1,0 +1,133 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neural Networks in Plain Words | Ali Bakhareba</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.explainer{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-top:10px}
+.explainer h3{margin:18px 0 6px;font-size:19px}
+.explainer h3:first-child{margin-top:0}
+.step{display:flex;gap:14px;align-items:flex-start;margin:14px 0}
+.step .n{flex:0 0 34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.step p{margin:2px 0 0}
+.diagram{overflow-x:auto;margin:8px 0 4px}
+.diagram svg{min-width:620px;width:100%;height:auto}
+details.check{background:var(--accent-soft);border-left:5px solid var(--accent);border-radius:6px;padding:12px 16px;margin-top:16px}
+details.check summary{cursor:pointer;font-weight:600}
+.usebox{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:10px}
+.usebox div{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.usebox b{color:var(--navy)}
+.cmp{width:100%;border-collapse:collapse;font-size:15px;margin-top:8px}
+.cmp th{background:var(--navy);color:#fff;text-align:left;padding:8px}
+.cmp td{border-bottom:1px solid var(--line);padding:8px;vertical-align:top}
+.tablewrap{overflow-x:auto}
+</style></head><body>
+<header class="site"><div class="wrap"><a href="index.html">Ali Bakhareba</a>
+<nav><a href="index.html#about">About</a><a href="index.html#artifacts">Artifacts</a><a href="index.html#contact">Contact</a></nav></div></header>
+<div class="wrap">
+<div class="art-head">
+ <div class="hero" style="padding:0;border:0"><div class="kicker">Artifact 3 · AIML-500 Machine Learning Fundamentals · Workshop 3</div></div>
+ <div class="toc">On this page:
+ <a href="#title">Title</a><a href="#introduction">Introduction</a><a href="#description">Description</a><a href="#explainer">The explainer</a><a href="#objective">Objective</a><a href="#process">Process</a><a href="#tools">Tools and Technologies Used</a><a href="#value">Value Proposition</a><a href="#unique">Unique Value</a><a href="#relevance">Relevance</a><a href="#references">References</a></div>
+</div>
+
+<div class="field" id="title"><h2>Title</h2>
+<h1 style="margin:0">Neural Networks in Plain Words: A Beginner’s Explainer for Research Teams</h1></div>
+
+<div class="field" id="introduction"><h2>Introduction</h2>
+<p>Insights teams are now asked to explain AI to people who have never studied it: clients, brand managers and new team members. If they cannot explain a model simply, people either distrust it or trust it too much. This artifact comes from my Workshop 3 discussion, where the task was to create the best simple explanation of neural networks I could, using a generative AI tool and the course’s strategies for communicating for learning. I adapted it into a short explainer that a research team can reuse when it needs to introduce neural networks to a non-technical audience.</p></div>
+
+<div class="field" id="description"><h2>Description</h2>
+<p>The explainer teaches what a neural network is in four short steps, built around one everyday story: learning to make tea the way a friend likes it. A simple diagram shows how information moves through the layers, and a one-question check lets the reader test their understanding. Below it, a short guide suggests how a team could use the explainer with clients and new analysts, and a comparison shows how the wording changed from my first version to the simpler final one.</p></div>
+
+<div class="field" id="explainer"><h2>The explainer</h2>
+<div class="explainer">
+<h3>A neural network learns the way we learn to make tea</h3>
+<p>Think about learning to make tea for a friend. The first cup is too sweet, so you use less sugar next time. The second cup is too weak, so you let it brew longer. After a few tries, you get it just right. A neural network learns in the same way: <b>try, check, fix, repeat.</b></p>
+
+<div class="step"><div class="n">1</div><div><b>It is made of many tiny helpers.</b><p>Each helper (called a “neuron”) looks at one small clue and passes a message to the next helpers. The helpers are lined up in rows called layers.</p></div></div>
+
+<div class="step"><div class="n">2</div><div><b>Messages move from row to row.</b>
+<div class="diagram"><svg viewBox="0 0 700 250" role="img" aria-label="Diagram: a photo of a fruit enters the first row, middle rows notice color, shape and size, and the last row answers apple or orange">
+<g font-family="Inter,Arial,sans-serif" font-size="13">
+<g stroke="#c9d1d9" stroke-width="1.2">
+<line x1="170" y1="70" x2="350" y2="55"/><line x1="170" y1="70" x2="350" y2="125"/><line x1="170" y1="70" x2="350" y2="195"/>
+<line x1="170" y1="125" x2="350" y2="55"/><line x1="170" y1="125" x2="350" y2="125"/><line x1="170" y1="125" x2="350" y2="195"/>
+<line x1="170" y1="180" x2="350" y2="55"/><line x1="170" y1="180" x2="350" y2="125"/><line x1="170" y1="180" x2="350" y2="195"/>
+<line x1="350" y1="55" x2="530" y2="95"/><line x1="350" y1="125" x2="530" y2="95"/><line x1="350" y1="195" x2="530" y2="95"/>
+<line x1="350" y1="55" x2="530" y2="165"/><line x1="350" y1="125" x2="530" y2="165"/><line x1="350" y1="195" x2="530" y2="165"/>
+</g>
+<text x="60" y="30" text-anchor="middle" font-weight="700" fill="#16324f">Photo of a fruit</text>
+<circle cx="60" cy="125" r="34" fill="#f6ece2" stroke="#b5651d"/><text x="60" y="122" text-anchor="middle" fill="#b5651d" font-weight="700" font-size="12">apple or</text><text x="60" y="138" text-anchor="middle" fill="#b5651d" font-weight="700" font-size="12">orange?</text>
+<line x1="96" y1="125" x2="150" y2="125" stroke="#16324f" stroke-width="1.5"/>
+<g fill="#16324f"><circle cx="170" cy="70" r="14"/><circle cx="170" cy="125" r="14"/><circle cx="170" cy="180" r="14"/></g>
+<g fill="#2f6f6a"><circle cx="350" cy="55" r="14"/><circle cx="350" cy="125" r="14"/><circle cx="350" cy="195" r="14"/></g>
+<g fill="#7a4e9c"><circle cx="530" cy="95" r="14"/><circle cx="530" cy="165" r="14"/></g>
+<text x="575" y="100" fill="#1c2430">“apple”</text><text x="575" y="170" fill="#1c2430">“orange”</text>
+<text x="170" y="228" text-anchor="middle" font-weight="700" fill="#16324f">First row</text><text x="170" y="245" text-anchor="middle" fill="#5a6573" font-size="12">takes in the photo</text>
+<text x="350" y="228" text-anchor="middle" font-weight="700" fill="#2f6f6a">Middle rows</text><text x="350" y="245" text-anchor="middle" fill="#5a6573" font-size="12">spot color, shape, size</text>
+<text x="530" y="228" text-anchor="middle" font-weight="700" fill="#7a4e9c">Last row</text><text x="530" y="245" text-anchor="middle" fill="#5a6573" font-size="12">gives the answer</text>
+</g></svg></div></div></div>
+
+<div class="step"><div class="n">3</div><div><b>It learns from its mistakes.</b><p>Each link between helpers has a strength, like the amount of sugar in the tea. When the answer is wrong, the network changes these strengths a little. After thousands of tries, it gets the answer right most of the time.</p></div></div>
+
+<div class="step"><div class="n">4</div><div><b>You already use it.</b><p>When your phone suggests the next word while you type, or a video app suggests what to watch next, a neural network is at work.</p></div></div>
+
+<details class="check"><summary>Quick check: If the network calls an orange an apple, what does it change? (click to see the answer)</summary>
+<p style="margin:8px 0 0">The strength of the links between its helpers, like changing the sugar in the tea.</p></details>
+</div>
+
+<h3 style="margin-top:22px">How a research team could use it</h3>
+<div class="usebox">
+<div><b>Client briefings.</b> Open a methods discussion with the tea story before explaining a model built on neural networks, such as one that codes open-ended survey answers.</div>
+<div><b>Onboarding new analysts.</b> Use the four steps as a first introduction, then add technical terms (input layer, weights, activation functions) once the basics are clear.</div>
+<div><b>Setting expectations.</b> Step 3 makes a useful point for stakeholders: a network learns from examples and still gets some answers wrong, so its results need checking.</div>
+</div>
+
+<h3 style="margin-top:22px">From first draft to final wording</h3>
+<div class="tablewrap"><table class="cmp">
+<tr><th>First version</th><th>Final version</th><th>Why the change helps a beginner</th></tr>
+<tr><td>Input layer, hidden layers, output layer</td><td>First row, middle rows, last row</td><td>Everyday words; the real term “neuron” is kept once</td></tr>
+<tr><td>Telling cats from dogs</td><td>Learning to make tea; apples and oranges</td><td>A routine almost everyone has done, with a clear try-and-fix loop</td></tr>
+<tr><td>Connection strength as a “volume knob”</td><td>Link strength as the amount of sugar</td><td>Ties the learning idea back to the same story</td></tr>
+<tr><td>Face unlock, spam filters, voice assistants</td><td>Next-word suggestions, video recommendations</td><td>Things a reader sees on their own phone every day</td></tr>
+</table></div>
+</div>
+
+<div class="field" id="objective"><h2>Objective</h2>
+<p>The Workshop 3 discussion asked students to apply the lesson’s communication strategies while working with a generative AI model to create the best simple explanation of neural networks, and to disclose the tools used. For the portfolio, my objective was to turn that explanation into something reusable: a short explainer an insights team can show a non-technical audience, plus guidance on when and how to use it.</p></div>
+
+<div class="field" id="process"><h2>Process</h2>
+<ol>
+<li><b>Chose the audience:</b> a complete beginner with no technical background.</li>
+<li><b>Prompted a generative AI tool</b> (Claude) to explain neural networks using the lesson’s strategies: small chunks, an everyday example, one idea at a time and a quick check at the end.</li>
+<li><b>Reviewed the first version</b> and found it still used technical terms such as “input layer” and “hidden layers.”</li>
+<li><b>Adjusted the prompt</b> to ask for simpler words and different examples, which produced the tea version.</li>
+<li><b>Checked the content</b> against the Workshop 3 lesson on deep learning and neural networks (layers, neurons, and learning by adjusting connection strengths).</li>
+<li><b>Posted it</b> to the class discussion with a short explanation of the strategies used.</li>
+<li><b>Adapted it for the portfolio:</b> added the layer diagram, a click-to-reveal check question, a guide for research teams and the first-draft-to-final comparison.</li>
+</ol></div>
+
+<div class="field" id="tools"><h2>Tools and Technologies Used</h2>
+<ul>
+<li>AIML-500 Workshop 3 lessons: the deep learning and neural networks lesson and the “communicating for learning” lesson</li>
+<li>Claude (Anthropic): generated the explanation from my prompts, revised it when I asked for simpler words, and helped build this page. I chose the audience, judged each version and checked the accuracy.</li>
+<li>Microsoft Word: the APA-formatted discussion post</li>
+<li>HTML, CSS and SVG: the page, the layer diagram and the click-to-reveal question</li>
+<li>GitHub Pages: hosting the portfolio</li>
+</ul></div>
+
+<div class="field" id="value"><h2>Value Proposition</h2>
+<div class="vp">This explainer gives research and insights teams a ready, tested way to introduce neural networks to clients and new colleagues in a few minutes, so conversations about AI-based methods start from shared understanding instead of jargon.</div></div>
+
+<div class="field" id="unique"><h2>Unique Value</h2>
+<p>Most beginner explanations of neural networks are written for students of technology. This one is written for the people a research team presents to. It uses one story from start to finish, shows how the wording was tested and simplified, and adds practical guidance on where it fits in client and onboarding conversations. That reflects my background: years of presenting research results to stakeholders who need the meaning, not the method.</p></div>
+
+<div class="field" id="relevance"><h2>Relevance</h2>
+<p>This artifact shows a different skill from my first two. Artifact 1 placed AI developments in context, and Artifact 2 applied technical understanding to a project decision. This one is about communication: explaining a technical idea so a beginner can follow it, which the course treats as a core part of leading change around AI. It supports my personal value proposition of bringing AI into research in a way that is explained in plain language and honest about its limits.</p></div>
+
+<div class="field refs" id="references"><h2>References</h2>
+<p>No outside sources are quoted on this page. The explanation is based on the AIML-500 Workshop 3 lessons on deep learning and neural networks and on communicating for learning (Indiana Wesleyan University).</p>
+</div>
+
+<footer>© 2026 Ali Bakhareba · Coursework artifact, M.S. in Artificial Intelligence – Data Analytics, Indiana Wesleyan University. <a href="index.html">Back to portfolio home</a></footer>
+</div></body></html>
