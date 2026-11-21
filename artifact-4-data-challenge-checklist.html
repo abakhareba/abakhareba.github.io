@@ -1,0 +1,153 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Before the Model: A Data-Challenge Checklist | Ali Bakhareba</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.diagram{overflow-x:auto;margin:10px 0 4px}
+.diagram svg{min-width:640px;width:100%;height:auto}
+.scen{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:12px}
+.scen div{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--c);border-radius:8px;padding:14px 16px}
+.scen h3{margin:0 0 4px;font-size:18px;color:var(--c)}
+.scen .case{font-size:14px;color:var(--muted);margin:0 0 8px}
+.scen .mine{font-size:15px;margin:0}
+.ck{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin-top:14px}
+.ck h3{margin:0 0 8px;font-size:19px;color:var(--c)}
+.ck ul{list-style:none;padding:0;margin:0}
+.ck li{position:relative;padding-left:30px;margin:0 0 9px}
+.ck li:before{content:"";position:absolute;left:0;top:4px;width:16px;height:16px;border:2px solid var(--c);border-radius:4px}
+.ck .ask{margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line);font-size:15px}
+.ck .ask b{color:var(--accent)}
+.c1{--c:#16324f}.c2{--c:#2f6f6a}.c3{--c:#7a4e9c}
+.cmp{width:100%;border-collapse:collapse;font-size:15px;margin-top:8px}
+.cmp th{background:var(--navy);color:#fff;text-align:left;padding:8px}
+.cmp td{border-bottom:1px solid var(--line);padding:8px;vertical-align:top}
+.tablewrap{overflow-x:auto}
+details.sum{background:var(--accent-soft);border-left:5px solid var(--accent);border-radius:6px;padding:12px 16px;margin-top:16px}
+details.sum summary{cursor:pointer;font-weight:600}
+details.sum p{font-size:15px;margin:8px 0 0}
+</style></head><body>
+<header class="site"><div class="wrap"><a href="index.html">Ali Bakhareba</a>
+<nav><a href="index.html#about">About</a><a href="index.html#artifacts">Artifacts</a><a href="index.html#contact">Contact</a></nav></div></header>
+<div class="wrap">
+<div class="art-head">
+ <div class="hero" style="padding:0;border:0"><div class="kicker">Artifact 4 · AIML-500 Machine Learning Fundamentals · Workshop 4</div></div>
+ <div class="toc">On this page:
+ <a href="#title">Title</a><a href="#introduction">Introduction</a><a href="#description">Description</a><a href="#checklist">The checklist</a><a href="#objective">Objective</a><a href="#process">Process</a><a href="#tools">Tools and Technologies Used</a><a href="#value">Value Proposition</a><a href="#unique">Unique Value</a><a href="#relevance">Relevance</a><a href="#references">References</a></div>
+</div>
+
+<div class="field" id="title"><h2>Title</h2>
+<h1 style="margin:0">Before the Model: A Data-Challenge Checklist for Insights Teams</h1></div>
+
+<div class="field" id="introduction"><h2>Introduction</h2>
+<p>Research teams now feed review text, customer records and survey data into machine learning models, and most model failures start with the data rather than the algorithm. This artifact comes from my Workshop 4 assignment, an interactive exercise with an AI coach that set three realistic data problems: cleaning messy customer reviews, scaling a résumé-screening model to a new country, and two hospitals building a model together without sharing raw records. I turned the decisions I made in that exercise into a short checklist an insights team can run before it trains, scales or shares a model.</p></div>
+
+<div class="field" id="description"><h2>Description</h2>
+<p>The page has four parts: a diagram showing where each data challenge appears in a model’s life; the three scenarios with the decisions I made; the checklist itself, with a question for each part that maps it to everyday research work; and a table showing where my first instinct was wrong and how I changed it. The coach’s own summary of my exercise is included at the end of the checklist, unedited, as evidence of the original work.</p>
+
+<div class="diagram"><svg viewBox="0 0 720 170" role="img" aria-label="Diagram: a model's life in four stages, collect and clean, train and test, deploy and scale, share and govern, with the three scenarios placed under the stages where they occur">
+<g font-family="Inter,Arial,sans-serif" font-size="13">
+<g fill="#ffffff" stroke="#dfe3e8" stroke-width="1.5">
+<rect x="10" y="20" width="160" height="56" rx="8"/><rect x="190" y="20" width="160" height="56" rx="8"/><rect x="370" y="20" width="160" height="56" rx="8"/><rect x="550" y="20" width="160" height="56" rx="8"/></g>
+<g fill="#16324f" font-weight="700" text-anchor="middle">
+<text x="90" y="44">1. Collect &amp; clean</text><text x="270" y="44">2. Train &amp; test</text><text x="450" y="44">3. Deploy &amp; scale</text><text x="630" y="44">4. Share &amp; govern</text></g>
+<g fill="#5a6573" font-size="12" text-anchor="middle">
+<text x="90" y="62">what counts as valid?</text><text x="270" y="62">is the score honest?</text><text x="450" y="62">works in a new place?</text><text x="630" y="62">who may use what?</text></g>
+<g stroke="#16324f" stroke-width="1.5"><line x1="170" y1="48" x2="190" y2="48"/><line x1="350" y1="48" x2="370" y2="48"/><line x1="530" y1="48" x2="550" y2="48"/></g>
+<rect x="10" y="100" width="340" height="40" rx="8" fill="#16324f"/><text x="180" y="125" text-anchor="middle" fill="#fff" font-weight="600">Scenario 1 · Cleaning customer reviews</text>
+<rect x="190" y="146" width="340" height="22" rx="6" fill="#2f6f6a"/><text x="360" y="161" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">Scenario 2 · Scaling a screening model to a new country</text>
+<rect x="550" y="100" width="160" height="40" rx="8" fill="#7a4e9c"/><text x="630" y="118" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">Scenario 3 · Two hospitals</text><text x="630" y="133" text-anchor="middle" fill="#fff" font-size="12">sharing sensitive data</text>
+</g></svg></div>
+
+<div class="scen">
+<div class="c1"><h3>1 · Messy customer reviews</h3><p class="case">800,000 public reviews with duplicates, bot spam, emoji-only posts and labels taken from star ratings.</p><p class="mine"><b>My decisions:</b> spot bots with several signals (purchase badges, photos, repeated names, posting times); flag near-duplicates for review instead of deleting them; give every review an ID; lower the weight of unverified reviews with a “trust score” instead of removing them; check accuracy group by group.</p></div>
+<div class="c2"><h3>2 · A model moving to a new market</h3><p class="case">A résumé screener trained on ten years of one company’s hiring decisions, now going to a new country at ten times the volume.</p><p class="mine"><b>My decisions:</b> expect local résumé styles to break the model; send uncertain cases to a human; run a pilot first as a “litmus test”; count the cost of errors to applicants and to the company.</p></div>
+<div class="c3"><h3>3 · Sharing sensitive data</h3><p class="case">Two hospitals want one diagnostic model, but neither wants to hand over raw patient records, and they code data differently.</p><p class="mine"><b>My decisions:</b> mask and generalize personal details (age ranges, county instead of ZIP code); train without moving raw data; keep a shared code-translation “logbook”; treat hacking as a remaining risk; don’t let accuracy alone decide.</p></div>
+</div></div>
+
+<div class="field" id="checklist"><h2>The checklist</h2>
+<p>Three short lists, one for each stage where things go wrong. Each ends with a question that maps it to everyday research work.</p>
+
+<div class="ck c1"><h3>Clean without erasing real customers</h3><ul>
+<li>Keep an untouched copy of the raw data and give every record an ID, so every change can be traced.</li>
+<li>Flag near-duplicates and likely bots for review; don’t delete them on one rule.</li>
+<li>Down-weight doubtful records instead of dropping them.</li>
+<li>Keep emoji-only and other-language responses and label them by meaning; unusual is not the same as invalid.</li>
+<li>Group duplicates before splitting training and test data. Copies on both sides inflate the test score.</li>
+<li>Check results for each customer group, not only overall. A group’s share can look stable while its results get worse.</li>
+</ul><p class="ask"><b>In research terms:</b> before coding open-ended answers or social-listening data with AI, ask what our cleaning rules are quietly removing.</p></div>
+
+<div class="ck c2"><h3>Scale only with local evidence</h3><ul>
+<li>Treat past decisions used as labels (who was hired, who was targeted) as possibly biased, not as neutral truth.</li>
+<li>Run a small pilot in the new market and check results group by group before full launch.</li>
+<li>Send low-confidence cases to a person instead of forcing an automatic answer.</li>
+<li>Write down who is hurt by each type of error, and how much.</li>
+</ul><p class="ask"><b>In research terms:</b> before taking a segmentation or targeting model built in one country into another, ask what evidence shows it still fits.</p></div>
+
+<div class="ck c3"><h3>Share without exposing people</h3><ul>
+<li>Share only what the model needs; mask names and generalize details such as age and location.</li>
+<li>Prefer setups where the model travels and the raw data stays put.</li>
+<li>Agree on one mapping table when partners code the same thing differently.</li>
+<li>Agree in writing what the shared data and the finished model may be used for, and that neither partner can sell or reuse it alone.</li>
+<li>Name the risks that remain (for example, hacking) and test the model at each partner separately.</li>
+</ul><p class="ask"><b>In research terms:</b> before combining client data with panel or agency data, ask who may use the combined result, and for what.</p></div>
+
+<h3 style="margin-top:24px">Where my first instinct was wrong</h3>
+<div class="tablewrap"><table class="cmp">
+<tr><th>First instinct</th><th>What I decided</th><th>Why it matters for a research team</th></tr>
+<tr><td>Remove emoji-only reviews as low quality</td><td>Keep them and label them by meaning</td><td>“😍😍😍” carries clear sentiment; cleaning can silently drop the customers a model must serve</td></tr>
+<tr><td>Duplicates split across training and test data would lower the score</td><td>They raise it, so group them before splitting</td><td>An inflated test score makes a model look ready when it is not</td></tr>
+<tr><td>One hospital could sell the jointly built model on its own</td><td>Use of a jointly built model needs joint approval and a stated purpose</td><td>The same applies to models built on combined client and agency data</td></tr>
+</table></div>
+
+<details class="sum"><summary>The AI coach’s summary of my exercise (unedited)</summary>
+<p><b>Scenario 1 — Data Quality and Cleaning:</b> Ali started by flagging bots with several signals: purchase badges, photos or videos, repetitive names, and posting times. He flagged near-duplicates for review instead of deleting them, and he gave every review a unique ID so it could be traced. He suggested a “trust score” that lowers the weight of unverified reviews without removing them. To validate the cleaning, he chose to check accuracy group by group, and he noted that a group’s share of the data can look stable while it still needs scrutiny.</p>
+<p><b>Scenario 2 — Bias, Distribution Shift, and Responsible Scaling:</b> On his own, Ali saw that résumé styles in a new country could break the model, and he proposed flagging uncertain cases for human review. He chose a pilot before full launch and called it a “litmus test.” He also saw that full-scale errors would hurt applicants and cost the company good hires.</p>
+<p><b>Scenario 3 — Privacy, Security, and Governance:</b> Ali proposed masking personal details and generalizing them, for example age ranges and county instead of ZIP code. After a hint, he reached the idea of training without sharing raw data, and he independently proposed a shared code-translation “logbook.” He named hacking as a remaining risk and pointed out that accuracy alone shouldn’t decide whether a model is good enough.</p>
+<p><b>Performance highlights:</b> Practical, buildable safeguards (IDs, a trust score, a mapping table) and a willingness to change course.</p>
+<p><b>How the reasoning developed:</b> Ali first proposed removing emoji-only reviews. After seeing that they carry clear sentiment, he decided to keep them and label them by meaning.</p>
+<p><b>Key insights to retain:</b> Duplicates split across training and test data inflate the test score. (Ali reached this after a worked example.) Historical hiring decisions can encode bias. (Ali recognized this after a direct explanation.) Evaluate each group or site separately.</p>
+<p><b>Area to keep developing:</b> Governance. Ali’s view that one hospital could sell the jointly built model on its own remained unresolved. Purpose limitation and joint approval deserve another look.</p>
+<p><b>Practical next step:</b> Look up “data-sharing agreements” and “purpose limitation,” then list three clauses Riverbend and Lakeside should sign.</p>
+<p><b>Overall takeaway:</b> Ali consistently looked for ways to keep data trustworthy without discarding real people, the common thread running from data cleaning through scaling to sensitive-data governance.</p>
+<p><i>This AI-generated summary documents Ali’s practice conversation. It is not an independent instructor grade.</i></p>
+</details>
+</div>
+
+<div class="field" id="objective"><h2>Objective</h2>
+<p>The Workshop 4 assignment asked me to work through three data-challenge scenarios with an AI coach, giving a decision and my reasoning each time, and to reflect on what I learned. Its course objectives were to discuss approaches for data processing and cleaning, and to explain the challenges of data sharing, privacy and security in machine learning. For the portfolio, my objective was to turn those decisions into a checklist that a research team can use before it relies on a model.</p></div>
+
+<div class="field" id="process"><h2>Process</h2>
+<ol>
+<li><b>Ran the exercise:</b> pasted the course’s “Data Challenge Scenarios Coach” prompt into Claude and worked through the three scenarios in order, answering each question and follow-up myself.</li>
+<li><b>Revised when challenged:</b> changed my position on emoji-only reviews and on duplicate leakage after the coach’s follow-up questions.</li>
+<li><b>Kept the evidence:</b> copied the coach’s concluding summary without changes and wrote a short reflection for the assignment.</li>
+<li><b>Grouped my decisions</b> by the stage of a model’s life where each problem appears: cleaning, scaling and sharing.</li>
+<li><b>Rewrote them as checklist items</b> a non-specialist can act on, and added a research-work question to each group.</li>
+<li><b>Revisited my weakest area:</b> the coach flagged governance as unresolved, so the sharing list now includes agreeing how a jointly built model may be used.</li>
+<li><b>Built this page</b> and checked it against the portfolio artifact template.</li>
+</ol></div>
+
+<div class="field" id="tools"><h2>Tools and Technologies Used</h2>
+<ul>
+<li>AIML-500 Workshop 4: the 4.3 Data Challenge Scenarios prompt and the 4.2 lesson on data challenges in machine learning</li>
+<li>Claude (Anthropic): played the scenario coach using the course prompt and wrote the concluding summary; later helped turn my decisions into this page and wrote its HTML and CSS. Every decision in the scenarios was my own.</li>
+<li>Microsoft Word: the APA-formatted assignment submission</li>
+<li>HTML, CSS and SVG: this page and the lifecycle diagram</li>
+<li>GitHub Pages: hosting the portfolio</li>
+</ul></div>
+
+<div class="field" id="value"><h2>Value Proposition</h2>
+<div class="vp">This checklist gives insights teams a short, practical set of questions to ask before they train, scale or share a model, so data problems get caught at the start instead of after a client has seen the results.</div></div>
+
+<div class="field" id="unique"><h2>Unique Value</h2>
+<p>Most data-quality checklists are written for engineers. This one is written for research teams and keeps real customers in view: it treats unusual responses as signal rather than noise, asks for results by group, and adds the governance question that research partnerships often skip. It also shows its own learning, including where my first instinct was wrong, which reflects how I want to bring AI into research: tested, explained and honest about limits.</p></div>
+
+<div class="field" id="relevance"><h2>Relevance</h2>
+<p>This artifact adds a skill my first three do not show. Artifact 1 placed AI developments in context, Artifact 2 applied technical understanding to a project decision, and Artifact 3 explained a technical idea to beginners. This one is about judging data before trusting a model: cleaning, bias, privacy and governance, which are the Workshop 4 outcomes. It connects directly to research work, where survey, review and customer data are the raw material of every insight.</p></div>
+
+<div class="field refs" id="references"><h2>References</h2>
+<p>No outside sources are quoted on this page. The scenarios come from the AIML-500 Workshop 4 assignment “4.3 Data Challenge Scenarios” and the 4.2 lesson on data challenges in machine learning (Indiana Wesleyan University, 2026).</p>
+</div>
+
+<footer>© 2026 Ali Bakhareba · Coursework artifact, M.S. in Artificial Intelligence – Data Analytics, Indiana Wesleyan University. All scenarios are fictional. <a href="index.html">Back to portfolio home</a></footer>
+</div></body></html>
