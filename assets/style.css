@@ -59,3 +59,5 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:14px}
 .ms .src{font-size:13px;color:var(--muted);margin-top:6px}
 .e1{--dot:var(--era1)} .e2{--dot:var(--era2)} .e3{--dot:var(--era3)} .e4{--dot:var(--era4)}
 @media (max-width:600px){.hero h1{font-size:31px}header.site nav a{margin-left:0;margin-right:14px}.art-head h1{font-size:27px}}
+/* Wrap long links (e.g., reference URLs) on small screens */
+a{overflow-wrap:anywhere}
